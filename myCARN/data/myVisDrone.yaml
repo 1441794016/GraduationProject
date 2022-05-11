@@ -1,0 +1,18 @@
+# parent
+# ├── yolov3
+# └── datasets
+#     └── VisDrone  ← downloads here
+
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: ../datasets/VisDrone  # dataset root dir
+
+# 下面三处均已修改
+train: images\VisDrone2019-DET-train  # train images (relative to 'path')  6471 images
+val: images\VisDrone2019-DET-val  # val images (relative to 'path')  548 images
+test: images\VisDrone2019-DET-test-dev  # test images (optional)  1610 images
+
+# Classes
+nc: 11  # number of classes，由10改成11，考虑了others类
+# 添加了others类
+names: ['pedestrian', 'people', 'bicycle', 'car', 'van', 'truck', 'tricycle', 'awning-tricycle', 'bus', 'motor','others']
